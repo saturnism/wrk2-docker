@@ -12,4 +12,4 @@ RUN cd wrk2 && make -j2
 FROM alpine:3.6
 RUN apk add --update openssl && apk --no-cache add ca-certificates
 COPY --from=builder /wrk2/wrk /bin
-CMD ["wrk"]
+ENTRYPOINT ["wrk"]
